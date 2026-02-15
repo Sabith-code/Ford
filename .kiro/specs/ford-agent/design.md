@@ -1,4 +1,4 @@
-# Design Document: Vector – Ford Feedback-to-Code Autonomous AI Agent
+# Design Document: Ford - Feedback-to-Code Autonomous AI Agent
 
 ## Overview
 
@@ -557,7 +557,7 @@ interface AuditLogRecord {
 ### Configuration Schema
 
 ```typescript
-interface VectorConfig {
+interface FordConfig {
   // X API Configuration
   xApi: {
     apiKey: string
@@ -684,7 +684,7 @@ Property 8: Ambiguity flagging
 **Validates: Requirements 2.5**
 
 Property 9: Branch naming convention
-*For any* created git branch for an approved issue, the branch name must match the pattern "vector/issue-{number}-{slug}"
+*For any* created git branch for an approved issue, the branch name must match the pattern "Ford/issue-{number}-{slug}"
 **Validates: Requirements 3.3**
 
 Property 10: Pull request linkage
@@ -1000,7 +1000,7 @@ interface ErrorLog {
 
 ### Dual Testing Approach
 
-The Vector system requires both unit testing and property-based testing for comprehensive coverage:
+The Ford system requires both unit testing and property-based testing for comprehensive coverage:
 
 **Unit Tests:**
 - Specific examples demonstrating correct behavior
@@ -1031,7 +1031,7 @@ const testConfig = {
 }
 
 // Example property test
-describe('Feature: vector-feedback-agent, Property 5: Severity score bounds', () => {
+describe('Feature: Ford-feedback-agent, Property 5: Severity score bounds', () => {
   it('should always produce severity scores between 0 and 100', () => {
     fc.assert(
       fc.property(
@@ -1137,7 +1137,7 @@ All tests must pass before merging:
 
 CI Pipeline configuration:
 ```yaml
-name: Vector CI
+name: Ford CI
 
 on: [push, pull_request]
 
